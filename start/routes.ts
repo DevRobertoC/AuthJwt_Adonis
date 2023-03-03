@@ -32,14 +32,24 @@ Route.group(() =>{
 Route.group(() => {
   Route.post("/register", "PerfilsController.registrar");
   Route.get("/listar", "PerfilsController.getListarPerfiles");
-}).prefix("/api/perfil").middleware("auth")
+}).prefix("/api/perfil")
 
 Route.group(() => {
-  Route.post("/register", "LibrosController.registrar");
+  Route.post("/register", "LibrosController.registrar").middleware("admin");
   Route.get("/listar", "LibrosController.getListarLibros");
-}).prefix("/api/libro").middleware("auth")
+}).prefix("/api/libros").middleware("auth")
 
 Route.group(() => {
   Route.post("/register", "TipoDocumentosController.registrar");
   Route.get("/listar", "TipoDocumentosController.getListarDocumentos");
 }).prefix("/api/documentos")
+
+Route.group(() => {
+  Route.post("/register", "EditorialsController.registrar").middleware("admin");
+  Route.get("/listar", "EditorialsController.getListarEditorial");
+}).prefix("/api/editoriales").middleware("auth")
+
+Route.group(() => {
+  Route.post("/register", "AutorsController.registrar").middleware("admin");
+  Route.get("/listar", "AutorsController.getListarAutor");
+}).prefix("/api/autores").middleware("auth")

@@ -10,7 +10,7 @@ export default class Libros extends BaseSchema {
       table.string('isbn', 40).notNullable().unique()
       table.integer('id_editorial').references('id_editorial').inTable('editoriales')
       table.integer('id_autor').references('id_autor').inTable('autores')
-      table.integer('id_usuario').references('id_usuario').inTable('usuarios')
+      table.integer('id_usuario')
       table.timestamps(true)
     })
   }
