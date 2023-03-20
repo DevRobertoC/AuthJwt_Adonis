@@ -1,0 +1,20 @@
+definitions:
+  libro:
+    type: object
+    properties:
+      id_libro:
+        type: number
+      titulo:
+        type: string
+      isbn:
+        type: string
+      id_editorial:
+        type: number
+      id_autor:
+        type: number
+      id_usuario:
+        type: number
+      created_at:
+        type: string
+      updated_at:
+        type: string

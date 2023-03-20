@@ -2,7 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Libro from 'App/Models/Libro';
 
 export default class LibrosController {
-    public async registrar({request}: HttpContextContract){
+    public async registrar({request, response}: HttpContextContract){
         const {titulo, isbn, editorialId, autorId} = request.all();
         const libro = new Libro();
         libro.titulo = titulo;

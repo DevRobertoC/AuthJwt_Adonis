@@ -53,7 +53,7 @@ export default class UsuariosController {
     
       public generarToken(payload: any):string{
         const opciones = {
-          expiresIn: "5 mins"
+          expiresIn: "500 mins"
         }
         return jwt.sign(payload, Env.get('JWT_SECRET_KEY'), opciones)    
       }
